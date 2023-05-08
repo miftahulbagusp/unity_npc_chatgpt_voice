@@ -7,6 +7,8 @@ namespace OpenAI
 {
     public class ChatGPT : MonoBehaviour
     {
+        const string API_KEY = "";
+        const string ORGANIZATION = "";
         //[SerializeField] private InputField inputField;
         //[SerializeField] private Button button;
         [SerializeField] private ScrollRect scroll;
@@ -14,7 +16,8 @@ namespace OpenAI
         [SerializeField] private RectTransform received;
 
         private float height;
-        private OpenAIApi openai = new OpenAIApi();
+        //private OpenAIApi openai = new OpenAIApi();
+        private OpenAIApi openai = new OpenAIApi(API_KEY, ORGANIZATION);
 
         private List<ChatMessage> messages = new List<ChatMessage>();
         private string prompt = "Act as a random stranger in a chat room and reply to the questions. Don't break character. Don't ever mention that you are an AI model.";
